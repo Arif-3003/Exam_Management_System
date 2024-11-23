@@ -88,15 +88,15 @@ public class deleteQuestion extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel6.setText("Option 2:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel7.setText("Option 3:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel8.setText("Option 4:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel9.setText("Answer:");
@@ -108,16 +108,21 @@ public class deleteQuestion extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 260, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 260, -1));
 
         jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 700, 30));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 700, 40));
 
         jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 700, 30));
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 700, 40));
 
         jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 700, 30));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 700, 40));
 
         jTextField5.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -125,10 +130,10 @@ public class deleteQuestion extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 700, 30));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 700, 40));
 
         jTextField6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 700, 30));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 700, 40));
 
         jTextField7.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +141,7 @@ public class deleteQuestion extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 700, 30));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 700, 40));
 
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -170,7 +175,6 @@ public class deleteQuestion extends javax.swing.JFrame {
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 440, -1, 50));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pages background admin.jpg"))); // NOI18N
-        jLabel10.setText("jLabel10");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -262,6 +266,11 @@ public class deleteQuestion extends javax.swing.JFrame {
         jTextField7.setText("");
         jTextField1.setEditable(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments

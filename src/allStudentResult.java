@@ -22,7 +22,7 @@ public class allStudentResult extends javax.swing.JFrame {
         try{
             Connection con=ConnectionProvider.getcon();
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("select * from student");
+            ResultSet rs=st.executeQuery("select * from student order by marks DESC");
             jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             
@@ -126,7 +126,7 @@ public class allStudentResult extends javax.swing.JFrame {
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
         int marks;
-        if(jTextField1.getText().equals(""))
+       /* if(jTextField1.getText().equals(""))
         {
             try {
         Connection con = ConnectionProvider.getcon();
@@ -138,14 +138,39 @@ public class allStudentResult extends javax.swing.JFrame {
         JFrame jf = new JFrame();
         jf.setAlwaysOnTop(true);
         JOptionPane.showMessageDialog(jf, e);
+    }*/
+
+         if (jTextField1.getText().equals("")) {
+    try {
+        Connection con = ConnectionProvider.getcon();
+        Statement st = con.createStatement();
+        
+        // Execute the query to fetch records ordered by marks in descending order
+        ResultSet rs = st.executeQuery("SELECT * FROM student ");
+        
+       
+        jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
+        
+        // Convert ResultSet to TableModel and set it to the JTable
+        jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+        
+ 
+        jTable1.revalidate();
+        jTable1.repaint();
+        
+    } catch (Exception e) {
+        JFrame jf = new JFrame();
+        jf.setAlwaysOnTop(true);
+        JOptionPane.showMessageDialog(jf, e);
     }
-        }
+}
+
         else{
             marks=Integer.parseInt(jTextField1.getText());
             try{
             Connection con=ConnectionProvider.getcon();
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("select * from student where marks>="+marks+"");
+            ResultSet rs=st.executeQuery("select * from student where marks>="+marks+"" );
             jTable1.setAutoResizeMode(jTable1.AUTO_RESIZE_OFF);
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             

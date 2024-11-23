@@ -2,8 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import java.security.MessageDigest;
+import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import project.ConnectionProvider;
 /**
  *
  * @author MTBD
@@ -34,6 +38,11 @@ public class login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -41,7 +50,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Username");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 160, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, -1, 20));
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -49,14 +58,14 @@ public class login extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 190, 360, 30));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 280, 360, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 250, -1, 20));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 320, -1, 20));
 
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 280, 360, 30));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 360, 30));
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox1.setText("Show Password");
@@ -65,7 +74,7 @@ public class login extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 320, -1, 30));
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 390, -1, 30));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.png"))); // NOI18N
@@ -75,7 +84,7 @@ public class login extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 360, -1, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, -1, 30));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Back.png"))); // NOI18N
@@ -85,10 +94,34 @@ public class login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 360, -1, 30));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login Background.PNG"))); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 410, -1, 30));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -60, 1370, -1));
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jButton3.setText("Forgot Password");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, -1, -1));
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 204));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jButton4.setText("Create New Account");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logino (1).png"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,17 +138,58 @@ public class login extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(jTextField1.getText().equals("Astro Apex")&&jPasswordField1.getText().equals("unity"))
-        {
-            setVisible(false);
-            new adminHome().setVisible(true);
+        
+        int temp=0;
+        try{
+            Connection con=ConnectionProvider.getcon();
+            Statement st=con.createStatement();
+            ResultSet rs=st.executeQuery("select password from admin where username= '"+jTextField1.getText()+"'");
+           while(rs.next())
+           {
+                String password=rs.getString("password");
+                String pword=passwordHash(jPasswordField1.getText());
+                if(password.equals(pword))
+                {
+                    temp=1;
+               setVisible(false);
+               new adminHome().setVisible(true);
+               //this.dispose();
+               
+                }
+                
+           }
+           if(temp==0)
+           {
+              ImageIcon icon=new ImageIcon("Incorrect Password.PNG");
+              JOptionPane.showMessageDialog(null,"<html><b style=\"color:red;font-size:10px\">Incorrect <br>Username or Password</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+           }
+            
         }
-        else{
-            ImageIcon icon=new ImageIcon("Incorrect Password.PNG");
-            JOptionPane.showMessageDialog(null,"<html><b style=\"color:red;font-size:10px\">Incorrect <br>Username or Password</b></html>","Show",JOptionPane.INFORMATION_MESSAGE,icon);
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public static String passwordHash(String password)
+    {
+        try{
+            MessageDigest md=MessageDigest.getInstance("SHA");
+            md.update(password.getBytes());
+            byte[] rbt=md.digest();
+            StringBuilder sb=new StringBuilder();
+            for(byte b:rbt)
+            {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        }
+        catch(Exception e)
+        {
+            
+        }
+        return null;
+    }
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
 
         // TODO add your handling code here:
@@ -128,6 +202,18 @@ public class login extends javax.swing.JFrame {
             jPasswordField1.setEchoChar('*');
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         setVisible(false);
+               new regitration().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+               new forgotpassword().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,10 +253,15 @@ public class login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables

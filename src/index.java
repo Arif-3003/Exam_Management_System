@@ -40,7 +40,7 @@ public class index extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student (1).jpg"))); // NOI18N
         jButton1.setText("Student");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

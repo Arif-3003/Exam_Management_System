@@ -20,7 +20,7 @@ public class allQuestions extends javax.swing.JFrame {
         try{
             Connection con=ConnectionProvider.getcon();
             Statement st=con.createStatement();
-            ResultSet rs=st.executeQuery("select * from question");
+            ResultSet rs=st.executeQuery("select * from question ORDER BY CAST(id AS UNSIGNED) ASC");
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
             
         }

@@ -45,7 +45,6 @@ public class adminHome extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginadmin (1).png"))); // NOI18N
-        jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 0, 0));
@@ -138,6 +137,17 @@ public class adminHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu8MouseClicked
+        // TODO add your handling code here:
+        JFrame jf=new JFrame();
+        jf.setAlwaysOnTop(true);
+        int a=JOptionPane.showConfirmDialog(jf, "Do you really want to Exit from the Application?","Select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jMenu8MouseClicked
+
     private void jMenu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu7MouseClicked
 
         // TODO add your handling code here:
@@ -151,22 +161,11 @@ public class adminHome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenu7MouseClicked
 
-    private void jMenu8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu8MouseClicked
-        // TODO add your handling code here:
-        JFrame jf=new JFrame();
-        jf.setAlwaysOnTop(true);
-        int a=JOptionPane.showConfirmDialog(jf, "Do you really want to Exit from the Application?","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0)
-        {
-           System.exit(0);
-        }
-    }//GEN-LAST:event_jMenu8MouseClicked
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
         // TODO add your handling code here:
         if(open==0)
         {
-            new addNewQuestion().setVisible(true);
+            new allStudentResult().setVisible(true);
             open=1;
         }
         else{
@@ -174,13 +173,13 @@ public class adminHome extends javax.swing.JFrame {
             jf.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(jf, "One Form is already opened!");
         }
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_jMenu6MouseClicked
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
         // TODO add your handling code here:
         if(open==0)
         {
-            new updateQuestion().setVisible(true);
+            new deleteQuestion().setVisible(true);
             open=1;
         }
         else{
@@ -188,7 +187,7 @@ public class adminHome extends javax.swing.JFrame {
             jf.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(jf, "One Form is already opened!");
         }
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_jMenu5MouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
@@ -204,25 +203,11 @@ public class adminHome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenu3MouseClicked
 
-    private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        // TODO add your handling code here:
-         if(open==0)
-        {
-            new deleteQuestion().setVisible(true);
-            open=1;
-        }
-        else{
-            JFrame jf=new JFrame();
-            jf.setAlwaysOnTop(true);
-            JOptionPane.showMessageDialog(jf, "One Form is already opened!");
-        }
-    }//GEN-LAST:event_jMenu5MouseClicked
-
-    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
         // TODO add your handling code here:
         if(open==0)
         {
-            new allStudentResult().setVisible(true);
+            new updateQuestion().setVisible(true);
             open=1;
         }
         else{
@@ -230,8 +215,21 @@ public class adminHome extends javax.swing.JFrame {
             jf.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(jf, "One Form is already opened!");
         }
-        
-    }//GEN-LAST:event_jMenu6MouseClicked
+    }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        // TODO add your handling code here:
+        if(open==0)
+        {
+            new addNewQuestion().setVisible(true);
+            open=1;
+        }
+        else{
+            JFrame jf=new JFrame();
+            jf.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(jf, "One Form is already opened!");
+        }
+    }//GEN-LAST:event_jMenu1MouseClicked
 
     /**
      * @param args the command line arguments
