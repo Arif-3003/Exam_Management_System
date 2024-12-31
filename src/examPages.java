@@ -166,7 +166,6 @@ public class examPages extends javax.swing.JFrame {
                 });
         time.start();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -212,8 +211,6 @@ public class examPages extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 255, 102));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student (1).jpg"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Algerian", 1, 40)); // NOI18N
         jLabel2.setText("Welcome!");

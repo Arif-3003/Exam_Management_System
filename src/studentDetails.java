@@ -8,6 +8,8 @@ import project.ConnectionProvider;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.awt.Color;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import javax.swing.JFrame;
 /**
  *
@@ -77,34 +79,34 @@ public class studentDetails extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, 49));
 
         jLabel2.setFont(new java.awt.Font("Microsoft Uighur", 1, 36)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student.png"))); // NOI18N
         jLabel2.setText("FILL UP THE FORM");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 19, -1, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 330, 50));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel3.setText("Date:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 22, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back student.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(927, 6, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(927, 6, -1, 60));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit (1).png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Close.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1164, 6, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 6, 90, 60));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 77, 1360, 10));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -560,62 +562,19 @@ public class studentDetails extends javax.swing.JFrame {
         String gender=(String)jComboBox1.getSelectedItem();
         String contactNo=jTextField6.getText();
         String email=jTextField7.getText();
-        String tenthUniversityName=jTextField8.getText();
-        String tenthPercentage=jTextField9.getText();
-        String tenthPassoutYear=jTextField10.getText();
-        String twelveUniversityName=jTextField11.getText();
-        String twelvePercentage=jTextField12.getText();
-        String twelvePassoutYear=jTextField13.getText();
-        String graduationUniversityName=jTextField14.getText();
-        String graduationPercentage=jTextField15.getText();
-        String graduationPassoutYear=jTextField16.getText();
+        String schoolname=jTextField8.getText();
+        String sscresult=jTextField9.getText();
+        String sscpassyear=jTextField10.getText();
+        String collegename=jTextField11.getText();
+        String hscresult=jTextField12.getText();
+        String hscpassyear=jTextField13.getText();
+        String versityname=jTextField14.getText();
+        String versityresult=jTextField15.getText();
+        String versitypassyear=jTextField16.getText();
         String address=jTextField17.getText();
         String marks="0";
-        /*if(jTextField2.getText().equals("select rollNo from student"))
-        {
-            JOptionPane.showMessageDialog(null, "You are not eligible!");
-        }
-        else{
-         try{
-            Connection con=ConnectionProvider.getcon() ;
-            PreparedStatement ps=con.prepareStatement("insert into student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setString(1,rollNo );
-            ps.setString(2, name);
-            ps.setString(3, fatherName);
-            ps.setString(4, motherName);
-            ps.setString(5,gender );
-            ps.setString(6,contactNo );
-            ps.setString(7, email);
-            ps.setString(8, tenthUniversityName);
-            ps.setString(9, tenthPercentage);
-            ps.setString(10, tenthPassoutYear);
-            ps.setString(11, twelveUniversityName);
-            ps.setString(12, twelvePercentage);
-            ps.setString(13, twelvePassoutYear);
-            ps.setString(14, graduationUniversityName);
-            ps.setString(15, graduationPercentage);
-            ps.setString(16, graduationPassoutYear);
-            ps.setString(17, address);
-            ps.setString(18, marks);
-            ps.executeUpdate();
-            setVisible(false);
-            new instructionStudent(rollNo).setVisible(true);
-            //JFrame jf=new JFrame();
-            //jf.setAlwaysOnTop(true);
-            //JOptionPane.showMessageDialog(null, "Successfully Updated");
-            //setVisible(false);
-            //new addNewQuestion().setVisible(true);
-            
-            
-        }
-        catch(Exception e)
-        {
-           
-            JOptionPane.showMessageDialog(null, e);
-            
-        }
-        }*/
-        try {
+        
+        /*try {
     Connection con = ConnectionProvider.getcon();
     PreparedStatement checkPs = con.prepareStatement("SELECT COUNT(*) FROM student WHERE rollNo = ?");
     checkPs.setString(1, rollNo);
@@ -633,15 +592,15 @@ public class studentDetails extends javax.swing.JFrame {
         ps.setString(5, gender);
         ps.setString(6, contactNo);
         ps.setString(7, email);
-        ps.setString(8, tenthUniversityName);
-        ps.setString(9, tenthPercentage);
-        ps.setString(10, tenthPassoutYear);
-        ps.setString(11, twelveUniversityName);
-        ps.setString(12, twelvePercentage);
-        ps.setString(13, twelvePassoutYear);
-        ps.setString(14, graduationUniversityName);
-        ps.setString(15, graduationPercentage);
-        ps.setString(16, graduationPassoutYear);
+        ps.setString(8, schoolname);
+        ps.setString(9, sscresult);
+        ps.setString(10, sscpassyear);
+        ps.setString(11, collegename);
+        ps.setString(12, hscresult);
+        ps.setString(13, hscpassyear);
+        ps.setString(14, versityname);
+        ps.setString(15, versityresult);
+        ps.setString(16, versitypassyear);
         ps.setString(17, address);
         ps.setString(18, marks);
         ps.executeUpdate();
@@ -650,7 +609,45 @@ public class studentDetails extends javax.swing.JFrame {
     }
 } catch (Exception e) {
     JOptionPane.showMessageDialog(null, e);
+}*/
+        try {
+    Connection con = ConnectionProvider.getcon();
+    PreparedStatement checkPs = con.prepareStatement("SELECT COUNT(*) FROM student WHERE rollNo = ?");
+    checkPs.setString(1, rollNo);
+    ResultSet rs = checkPs.executeQuery();
+
+    if (rs.next() && rs.getInt(1) > 0) {
+        JOptionPane.showMessageDialog(null, "Roll number already exists! You are not eligible.");
+    } else {
+        // Proceed with insertion
+        PreparedStatement ps = con.prepareStatement("INSERT INTO student VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps.setString(1, rollNo);
+        ps.setString(2, name);
+        ps.setString(3, fatherName);
+        ps.setString(4, motherName);
+        ps.setString(5, gender);
+        ps.setString(6, contactNo);
+        ps.setString(7, email);
+        ps.setString(8, schoolname);
+        ps.setString(9, sscresult);
+        ps.setString(10, sscpassyear);
+        ps.setString(11, collegename);
+        ps.setString(12, hscresult);
+        ps.setString(13, hscpassyear);
+        ps.setString(14, versityname);
+        ps.setString(15, versityresult);
+        ps.setString(16, versitypassyear);
+        ps.setString(17, address);
+        ps.setString(18, marks);
+        ps.executeUpdate();
+        setVisible(false);
+        new instructionStudent(rollNo).setVisible(true);
+    }
+} 
+        catch (Exception e) {
+    JOptionPane.showMessageDialog(null, e);
 }
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

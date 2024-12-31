@@ -1,4 +1,5 @@
 
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -20,8 +21,10 @@ public class forgotpassword extends javax.swing.JFrame {
     /**
      * Creates new form forgotpassword
      */
+    Connection con=null;
     public forgotpassword() {
         initComponents();
+        con=ConnectionProvider.getcon() ;
     }
 
     /**
@@ -93,27 +96,28 @@ public class forgotpassword extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(153, 204, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/save.png"))); // NOI18N
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 342, 100, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 342, 110, -1));
 
         jButton2.setBackground(new java.awt.Color(255, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/back.png"))); // NOI18N
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 342, 90, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 342, 110, -1));
 
         jButton3.setBackground(new java.awt.Color(204, 204, 204));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/search.png"))); // NOI18N
         jButton3.setText("Search");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,7 +201,7 @@ public class forgotpassword extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String username=jTextField1.getText()   ;
-        String newpassword=jPasswordField1.getText()   ;
+        String newpassword=passwordHash(jPasswordField1.getText());   ;
         String securityQ=jTextField2.getText()   ;
         String answer=jTextField3.getText()   ;
         try{
@@ -232,7 +236,25 @@ public class forgotpassword extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+ public static String passwordHash(String password)
+    {
+        try{
+            MessageDigest md=MessageDigest.getInstance("SHA");
+            md.update(password.getBytes());
+            byte[] rbt=md.digest();
+            StringBuilder sb=new StringBuilder();
+            for(byte b:rbt)
+            {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        }
+        catch(Exception e)
+        {
+            
+        }
+        return null;
+    }
     /**
      * @param args the command line arguments
      */

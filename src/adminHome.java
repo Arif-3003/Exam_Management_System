@@ -28,6 +28,7 @@ public class adminHome extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -38,14 +39,13 @@ public class adminHome extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginadmin (1).png"))); // NOI18N
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginadmin (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/index background.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 0, 0));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Navigation Bar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 36), new java.awt.Color(204, 0, 0))); // NOI18N
@@ -111,7 +111,7 @@ public class adminHome extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu6);
 
-        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logout.png"))); // NOI18N
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logout_1.png"))); // NOI18N
         jMenu7.setText("Logout");
         jMenu7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenu7.setMargin(new java.awt.Insets(0, 3, 0, 18));
@@ -122,7 +122,7 @@ public class adminHome extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu7);
 
-        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit (1).png"))); // NOI18N
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exit-arrow.png"))); // NOI18N
         jMenu8.setText("Exit");
         jMenu8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenu8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -269,6 +269,7 @@ public class adminHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
